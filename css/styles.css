@@ -319,7 +319,7 @@ html {
 }
 
 .mobile-menu {
-    width: 150px;
+    width: 250px;
     height: auto;
     text-align: initial;
     padding: 20px 20px 0px 20px;
@@ -332,7 +332,7 @@ html {
 }
 
 .mobile-menu ul li {
-    padding: 20px;
+    padding: 10px;
 }
 
 .mobile-menu ul li a {
@@ -345,16 +345,223 @@ html {
 
 .mobile-menu .menu-email {
     font-weight: normal;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--very-ligth-pink);
 }
 
 .mobile-menu .menu-sign-mobile {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
     color: var(--hospital-green);
     text-decoration: none;
     font-family: var(--quicksand);
+}
+
+.mobile-menu .menu-orders {
+    padding-top: 12px;
+    border-top: 1px solid var(--very-ligth-pink);
+}
+
+.my-order {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.tittle-order {
+    font-size: 1.6rem;
+    margin-bottom: 40px;
+}
+
+.my-order-content {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 300px;
+}
+
+.my-order-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.order {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: center;
+    background-color: var(--text-input-field);
+    border-radius: 10px;
+    margin-bottom: 24px;
+    padding: 20px 24px;
+    font-family: var(--roboto);
+}
+
+.order p:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+}
+
+.order p span:nth-child(1) {
+    font-size: 1.4rem;
+    font-weight: bolder;
+}
+
+.order p span:nth-child(2) {
+    font-size: 1.2rem;
+    color: var(--very-ligth-pink);
+}
+
+.order .price {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: end;
+}
+
+.shopping-cart {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.shopping-cart figure img {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.shopping-cart figure {
+    margin: 0;
+}
+
+.shopping-cart p:nth-child(2) {
+    color: var(--very-ligth-pink);
+    align-self: center;
+    font-size: 1.2rem;
+}
+
+.shopping-cart p:nth-child(3) {
+    font-size: 1.4rem;
+    font-weight: bold;
+    align-self: center;
+}
+
+.orders {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 24px;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 24px 24px;
+    font-family: var(--quicksand);
+}
+
+.orders p:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+}
+
+.orders p span:nth-child(1) {
+    font-size: 1.4rem;
+    font-weight: bolder;
+}
+
+.orders p span:nth-child(2) {
+    font-size: 1.2rem;
+    color: var(--very-ligth-pink);
+}
+
+.orders figure {
+    width: 15px;
+    height: 15px;
+}
+
+.orders .price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: end;
+    color: var(--dark);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 60px;
+    border-bottom: 1px solid var(--very-ligth-pink);
+}
+
+.navbar-left {
+    display: flex;
+}
+
+.menu {
+    display: none;
+}
+
+.nav-logo {
+    width: 100px;
+}
+
+.navbar-left ul,
+.navbar-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    height: 60px;
+}
+
+.navbar-left ul {
+    margin-left: 12px;
+}
+
+.navbar-left ul li a,
+.navbar-right ul li a {
+    text-decoration: none;
+    color: var(--very-ligth-pink);
+    border: 1px solid var(--white);
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.navbar-shoping-cart {
+    position: relative;
+}
+
+.navbar-shoping-cart div {
+    width: 12px;
+    height: 12px;
+    background-color: var(--hospital-green);
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50%;
+    position: absolute;
+    top: -6px;
+    right: -3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*hover para cambiar el a cuando pase el cursor*/
+
+.navbar-left ul li a:hover,
+.navbar-right ul li a:hover {
+    border: 1px solid var(--hospital-green);
+    color: var(--hospital-green);
+}
+
+.nav-email {
+    color: var(--very-ligth-pink);
+    font-size: 1.2rem;
+    margin-right: 5px;
 }
 
 @media (max-width: 640px) {
@@ -385,5 +592,15 @@ html {
     .product-card img {
         width: 140px;
         height: 140px;
+    }
+    .tittle-order {
+        visibility: hidden;
+    }
+    .menu {
+        display: block;
+    }
+    .navbar-left ul,
+    .nav-email {
+        display: none;
     }
 }
